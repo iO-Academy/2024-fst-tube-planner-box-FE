@@ -11,6 +11,10 @@ Front-end
 │   ├── App.css
 │   ├── App.jsx
 │   ├── assets
+│   │   ├── App Tree.drawio.png
+│   │   ├── Final Project - Database Design.drawio.png
+│   │   ├── folderStructure.txt
+│   │   └── image.png
 │   ├── components
 │   │   ├── atoms
 │   │   │   ├── CircleElement
@@ -21,19 +25,22 @@ Front-end
 │   │   │   ├── LabelElement
 │   │   │   └── PElement
 │   │   ├── molecules
+│   │   │   ├── Cost
+│   │   │   ├── Header
 │   │   │   ├── Headings
 │   │   │   ├── InfoRow
 │   │   │   ├── LineMolecule
 │   │   │   ├── Routes
 │   │   │   ├── Station
+│   │   │   ├── Time
 │   │   │   └── Totals
 │   │   └── organisms
 │   │       ├── Form
-│   │       ├── Header
 │   │       └── Results
 │   ├── index.css
 │   └── main.jsx
 └── vite.config.js
+
 
 
 Back-end
@@ -44,5 +51,7 @@ Back-end
 ├── package-lock.json
 ├── package.json
 ├── public
+│   └── assets
+│       └── tubeInfo.json
 ├── routes
 └── server.js
