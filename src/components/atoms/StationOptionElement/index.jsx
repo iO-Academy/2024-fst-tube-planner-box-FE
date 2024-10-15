@@ -1,7 +1,6 @@
-const StationOptionElement = ({value, tailwind}) => {
+const StationOptionElement = ({value}) => {
     return (
-        <option value={value} className={tailwind}>{value}</option>
+        <option value={value}>{value}</option>
     )
 }
-
 export default StationOptionElement
