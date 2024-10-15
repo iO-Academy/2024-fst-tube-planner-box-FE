@@ -1,6 +1,7 @@
 const LabelElement = ({inputName} ) => {
     return (
-        <label for={inputName}></label>
+        <label>{inputName}</label>
+    //     weird stuff happening when trying to add 'for' in label tag
     )
 }
 

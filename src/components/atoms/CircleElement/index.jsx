@@ -1,6 +1,6 @@
 const CircleElement = ({ content }) => {
     return (
-        <div>{content}</div>
+        <div></div>
     )
 }
 
