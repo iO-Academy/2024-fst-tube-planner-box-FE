@@ -5,17 +5,11 @@ import SubmitButtonElement from "../../atoms/SubmitButtonElement/index.jsx";
 
 const Form = () => {
     return (
-        <form className="form">
+        <form className="border-2 border-solid border-black rounded-2xl flex flex-col p-4">
             <LabelElement inputName="from" htmlFor="from" />
-            <StationSelectElement name="from" id="from" >
-                {/*<StationOptionElement ></StationOptionElement>*/}
-            {/*    Iterate through stations here */}
-            </StationSelectElement>
+            <StationSelectElement name="from" id="from" />
             <LabelElement inputName="to" htmlFor="to" />
-            <StationSelectElement name="to" id="to" >
-                {/*<StationOptionElement ></StationOptionElement>*/}
-                {/*    Iterate through stations here */}
-            </StationSelectElement>
+            <StationSelectElement name="to" id="to" />
             <SubmitButtonElement />
         </form>
 

@@ -1,6 +1,9 @@
-const H1Element = ({ content } ) => {
+const H1Element = ({ content1, content2 } ) => {
     return (
-        <h1>{content}</h1>
+        <h1 className="text-center m-5 text-4xl font-extrabold text-gray-900">{content1}
+            <mark
+                className="text-white bg-cyan-700 rounded p-2">{content2}</mark>
+        </h1>
     )
 }
 

@@ -1,6 +1,9 @@
 const H2Element = ({content}) => {
     return (
-        <h2>{content}</h2>
+        <div className="w-full flex flex-col items-center justify-center text-lg leading-loose">
+            <h2 className="">{content}</h2>
+        </div>
+
     )
 }
 
