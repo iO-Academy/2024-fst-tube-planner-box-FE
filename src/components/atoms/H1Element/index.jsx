@@ -1,4 +1,4 @@
-const H1Element = ({ content, tailwind } ) => {
+const H1Element = ({ content } ) => {
     return (
         <h1>{content}</h1>
     )
