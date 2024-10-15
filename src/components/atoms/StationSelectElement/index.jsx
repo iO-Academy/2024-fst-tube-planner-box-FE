@@ -21,7 +21,7 @@ const StationSelectElement = ({name, id}) => {
             {
                 data.map((tube) => {
                     return (
-                        <StationOptionElement key={tube.code} value={`${tube.name} - ${tube.code}`}/>
+                        <StationOptionElement key={tube.code} value={tube.name + ' ' + tube.code}/>
                     )
                 })
             }
