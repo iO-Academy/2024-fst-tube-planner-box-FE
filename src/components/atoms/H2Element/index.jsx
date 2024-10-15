@@ -1,7 +1,6 @@
 const H2Element = ({content}) => {
     return (
-        <h2>{content}</h2>
+        <h2 className='text-xl font-bold text-center'>{content}</h2>
     )
 }
-
 export default H2Element
