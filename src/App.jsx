@@ -7,20 +7,6 @@ import Results from "./components/organisms/Results/index.jsx";
 
 function App() {
 
-    const [data, setData] = useState([])
-    const [query, setQuery] = useState('http://localhost:3000')
-
-    useEffect(() => {
-        const getData = async () => {
-            const response = await fetch(query)
-            const tubes = await response.json()
-            setData(tubes)
-        }
-        getData()
-    }, [query]);
-
-    console.log(data)
-
 
   return (
     <>
