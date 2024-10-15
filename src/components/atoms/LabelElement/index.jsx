@@ -1,6 +1,6 @@
-const LabelElement = () => {
+const LabelElement = ({inputName} ) => {
     return (
-        <label></label>
+        <label for={inputName}></label>
     )
 }
 
