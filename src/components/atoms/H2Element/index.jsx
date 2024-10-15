@@ -1,4 +1,4 @@
-const H2Element = ({ content }) => {
+const H2Element = ({content}) => {
     return (
         <h2>{content}</h2>
     )
