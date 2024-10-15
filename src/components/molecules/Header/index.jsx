@@ -2,7 +2,7 @@ import H1Element from "../../atoms/H1Element/index.jsx";
 
 const Header = () => {
     return (
-        <div className="border-black border-2 border-solid rounded-2xl">
+        <div className="border-black border-2 border-solid rounded-2xl bg-green-50">
             <H1Element content1="Journey" content2="Box"/>
         </div>
 
