@@ -562,6 +562,10 @@ video {
   margin-top: 1.25rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-1\/6 {
   height: 16.666667%;
 }
