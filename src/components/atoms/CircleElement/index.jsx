@@ -1,6 +1,6 @@
-const CircleElement = () => {
+const CircleElement = ({ content }) => {
     return (
-        <div></div>
+        <div>{content}</div>
     )
 }
 

@@ -1,6 +1,6 @@
-const H2Element = () => {
+const H2Element = ({ content }) => {
     return (
-        <h2></h2>
+        <h2>{content}</h2>
     )
 }
 
