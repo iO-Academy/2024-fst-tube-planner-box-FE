@@ -17,7 +17,7 @@ const StationSelectElement = ({name, id}) => {
 
     return (
         <select name={name} id={id}>
-            <option value="none" selected disabled hidden>Select</option>
+            <option value="" selected disabled hidden>Select</option>
             {
                 data.map((tube) => {
                     return (

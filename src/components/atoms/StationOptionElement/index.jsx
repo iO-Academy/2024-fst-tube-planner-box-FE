@@ -1,6 +1,6 @@
-const StationOptionElement = ({value}) => {
+const StationOptionElement = ({disabled = false, value}) => {
     return (
-        <option value={value}>{value}</option>
+        <option disabled={disabled} value={value}>{value}</option>
     )
 }
 export default StationOptionElement
