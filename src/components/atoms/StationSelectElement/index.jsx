@@ -13,7 +13,7 @@ const StationSelectElement = ({data, name, id, selectedStation, setSelectedStati
             value={selectedStation}
             onChange={(e) => setSelectedStation(e.target.value)}>
 
-            <option value="" disabled hidden> Select</option>
+            <option value="" disabled> Select</option>
             {
                 data.length > 0 ? (
                     data.map((tube) => (

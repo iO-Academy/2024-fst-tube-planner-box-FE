@@ -9,9 +9,11 @@ const Form = () => {
     const [query, setQuery] = useState('http://localhost:3000')
     // const [fromStation, setFromStation] = useState("")
     // const [toStation, setToStation] = useState("")
-    const [selectedStation, setSelectedStation] = useState('');
+    const [selectedOriginStation, setSelectedOriginStation] = useState('');
+    const [selectedDestinationStation, setSelectedDestinationStation] = useState('');
 
-    const filteredData = data.filter(item => item.name + ' ' + item.code !== selectedStation)
+    const filteredDestinationData = data.filter(item => item.name + ' ' + item.code !== selectedOriginStation)
+    const filteredOriginData = data.filter(item => item.name + ' ' + item.code !== selectedDestinationStation)
 
     useEffect(() => {
         const getData = async () => {
@@ -25,15 +27,13 @@ const Form = () => {
 
     return (
         <form className="border-2 border-solid border-black rounded-2xl flex flex-col p-4 bg-white m-4 shadow-2xl">
-            {/*<LabelElement inputName="from" htmlFor="from" />*/}
-            <StationSelectElement data={data} name="from" id="from" selectedStation={selectedStation}
-                                  setSelectedStation={setSelectedStation}/>
-            <p>Selected station = {selectedStation}</p>
-            {/*<LabelElement inputName="to" htmlFor="to" />*/}
-            <StationSelectElement data={filteredData} name="to" id="to" selectedStation="placeholder"
-                                  setSelectedStation={setSelectedStation}/>
-            {/*<StationSelectElement name="to" id="to" />*/}
-            {/*<SubmitButtonElement />*/}
+            <LabelElement inputName="from" htmlFor="from" />
+            <StationSelectElement data={filteredDestinationData} name="from" id="from" selectedStation={selectedDestinationStation}
+                                  setSelectedStation={setSelectedDestinationStation}/>
+            <LabelElement inputName="to" htmlFor="to" />
+            <StationSelectElement data={filteredOriginData} name="to" id="to"
+                                  setSelectedStation={setSelectedOriginStation} selectedStation={selectedOriginStation}/>
+            <SubmitButtonElement />
         </form>
 
 )
