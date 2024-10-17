@@ -25,7 +25,6 @@ function App() {
         setOriginTitle(selectedOriginStation)
     }
 
-
     return (
     <>
         <Header />
