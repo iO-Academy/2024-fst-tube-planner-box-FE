@@ -10,6 +10,9 @@ function App() {
     const [route, setRoute] = useState([])
     const [selectedOriginStation, setSelectedOriginStation] = useState('');
     const [selectedDestinationStation, setSelectedDestinationStation] = useState('');
+
+    const [numberStops, setNumberStops] = useState('')
+
     const handleSubmit = async (event) => {
         event.preventDefault()
         const response = await fetch(`http://localhost:3000/route?from=${selectedOriginStation}&to=${selectedDestinationStation}`)

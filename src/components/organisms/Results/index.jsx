@@ -1,35 +1,32 @@
-import InfoRow from "../../molecules/InfoRow/index.jsx";
 import H3Element from "../../atoms/H3Element/index.jsx";
 
-const Results = ({numStops, line, route, selectedOriginStation, selectedDestinationStation}) => {
+const Results = ({ route, selectedOriginStation, selectedDestinationStation }) => {
+    const routeStations = route.slice(1, -1)
+    const routeLine = routeStations.length > 0 ? routeStations[0].line : '';
 
 
-    const routeStations = []
-    for (let i = 0; (i <= route.length - 2); i++) {
 
-        routeStations.push(route[i])
+    if (routeStations.length === 0) {
+        return null
     }
 
-
     return (
-        <>
-            <div className="border-2 border-black border-solid rounded-2xl bg-white m-4 min-h-72 shadow-2xl">
-                <InfoRow numStops={numStops} line={line}/>
-
-
-                <H3Element content={selectedDestinationStation}/>
-
-                {
-
-                    routeStations.map((stop) => (
-                        <p>{stop.name}</p>
-                    ))
-
-                }
-                <H3Element content={selectedOriginStation}/>
+        <div className="border-2 border-black border-solid rounded-2xl bg-white m-4 min-h-72 shadow-2xl">
+            <div className='flex justify-between'>
+                <H3Element content={'Stops: ' + (routeStations.length + 1)} />
+                <H3Element content={'Line ' + routeLine} />
             </div>
-        </>
+            <div className='text-center'>
+                <p className='text-2xl text-cyan-700 m-2'>From: {selectedDestinationStation}</p>
+                {
+                    routeStations.map((stop, index) => (
+                        <p key={index}>{stop.name}</p>
+                    ))
+                }
+                <p className='text-2xl text-cyan-700 m-2'>To: {selectedOriginStation}</p>
+            </div>
+        </div>
     )
 }
 
-export default Results
+export default Results;

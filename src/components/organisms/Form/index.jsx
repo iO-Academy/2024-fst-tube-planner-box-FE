@@ -8,8 +8,6 @@ const Form = ({handleSubmit, selectedDestinationStation, selectedOriginStation, 
     const [data, setData] = useState([])
     const [query, setQuery] = useState('http://localhost:3000')
 
-
-
     const filteredDestinationData = data.filter(item => item.name + ' ' + item.code !== selectedOriginStation)
     const filteredOriginData = data.filter(item => item.name + ' ' + item.code !== selectedDestinationStation)
 
