@@ -7,14 +7,40 @@ import Results from "./components/organisms/Results/index.jsx";
 
 function App() {
 
+    const [route, setRoute] = useState([])
+    const [selectedOriginStation, setSelectedOriginStation] = useState('');
+    const [selectedDestinationStation, setSelectedDestinationStation] = useState('');
+    const [error, setError] = useState('')
+    const [destinationTitle, setDestinationTitle] = useState('')
+    const [originTitle, setOriginTitle] = useState('')
 
-  return (
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        const response = await fetch(`http://localhost:3000/route?from=${selectedOriginStation}&to=${selectedDestinationStation}`)
+        const routeArray = await response.json()
+        console.log(routeArray)
+        setRoute(routeArray)
+        setError('No route available')
+        setDestinationTitle(selectedDestinationStation)
+        setOriginTitle(selectedOriginStation)
+    }
+
+
+    return (
     <>
         <Header />
         <div className= 'bg-cyan-700 min-h-screen'>
-            <H2Element content="Where are you going, mate?"/>
-            <Form />
-            <Results numStops="numStops" line="line"/>
+            <H2Element content="Where are you going??"/>
+            <Form handleSubmit={handleSubmit}
+                  selectedOriginStation={selectedOriginStation}
+                  setSelectedOriginStation={setSelectedOriginStation}
+                  selectedDestinationStation={selectedDestinationStation}
+                  setSelectedDestinationStation={setSelectedDestinationStation}/>
+            <Results error={error} selectedOriginStation={selectedOriginStation}
+                     selectedDestinationStation={selectedDestinationStation}
+                     route={route} numStops="numStops" line="line"
+                     destinationTitle={destinationTitle} originTitle={originTitle}
+            />
         </div>
 
     </>
