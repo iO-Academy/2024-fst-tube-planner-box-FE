@@ -1,6 +1,6 @@
 import H3Element from "../../atoms/H3Element/index.jsx";
 
-const Results = ({ route, selectedOriginStation, selectedDestinationStation, error}) => {
+const Results = ({ route, selectedOriginStation, selectedDestinationStation, error, destinationTitle, originTitle}) => {
     const routeStations = route.slice(1, -1)
     const routeLine = routeStations.length > 0 ? routeStations[0].line : ''
 
@@ -15,13 +15,13 @@ const Results = ({ route, selectedOriginStation, selectedDestinationStation, err
                 <H3Element content={'Line ' + routeLine} />
             </div>
             <div className='text-center'>
-                <p className='text-2xl text-cyan-700 m-2'>From: {selectedDestinationStation}</p>
+                <p className='text-2xl text-cyan-700 m-2'>From: {destinationTitle}</p>
                 {
                     routeStations.map((stop, index) => (
                         <p key={index}>{stop.name}</p>
                     ))
                 }
-                <p className='text-2xl text-cyan-700 m-2'>To: {selectedOriginStation}</p>
+                <p className='text-2xl text-cyan-700 m-2'>To: {originTitle}</p>
             </div>
         </div>
     )
