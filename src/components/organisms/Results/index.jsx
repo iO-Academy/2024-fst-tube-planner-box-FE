@@ -2,9 +2,7 @@ import H3Element from "../../atoms/H3Element/index.jsx";
 
 const Results = ({ route, selectedOriginStation, selectedDestinationStation }) => {
     const routeStations = route.slice(1, -1)
-    const routeLine = routeStations.length > 0 ? routeStations[0].line : '';
-
-
+    const routeLine = routeStations.length > 0 ? routeStations[0].line : ''
 
     if (routeStations.length === 0) {
         return null
