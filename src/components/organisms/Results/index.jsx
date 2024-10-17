@@ -1,11 +1,11 @@
 import H3Element from "../../atoms/H3Element/index.jsx";
 
-const Results = ({ route, selectedOriginStation, selectedDestinationStation }) => {
+const Results = ({ route, selectedOriginStation, selectedDestinationStation, error}) => {
     const routeStations = route.slice(1, -1)
     const routeLine = routeStations.length > 0 ? routeStations[0].line : ''
 
     if (routeStations.length === 0) {
-        return null
+        return <p className='text-center text-white mt-2'>{error}</p>
     }
 
     return (

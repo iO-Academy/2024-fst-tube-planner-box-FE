@@ -10,6 +10,8 @@ function App() {
     const [route, setRoute] = useState([])
     const [selectedOriginStation, setSelectedOriginStation] = useState('');
     const [selectedDestinationStation, setSelectedDestinationStation] = useState('');
+    const [error, setError] = useState('')
+
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -17,6 +19,7 @@ function App() {
         const routeArray = await response.json()
         console.log(routeArray)
         setRoute(routeArray)
+        setError('No route available')
     }
 
 
@@ -30,7 +33,7 @@ function App() {
                   setSelectedOriginStation={setSelectedOriginStation}
                   selectedDestinationStation={selectedDestinationStation}
                   setSelectedDestinationStation={setSelectedDestinationStation}/>
-            <Results selectedOriginStation={selectedOriginStation} selectedDestinationStation={selectedDestinationStation} route={route} numStops="numStops" line="line"/>
+            <Results error={error} selectedOriginStation={selectedOriginStation} selectedDestinationStation={selectedDestinationStation} route={route} numStops="numStops" line="line"/>
         </div>
 
     </>
