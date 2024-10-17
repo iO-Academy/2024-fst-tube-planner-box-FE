@@ -7,14 +7,29 @@ import Results from "./components/organisms/Results/index.jsx";
 
 function App() {
 
+    const [route, setRoute] = useState([])
+    const [selectedOriginStation, setSelectedOriginStation] = useState('');
+    const [selectedDestinationStation, setSelectedDestinationStation] = useState('');
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        const response = await fetch(`http://localhost:3000/route?from=${selectedOriginStation}&to=${selectedDestinationStation}`)
+        const routeArray = await response.json()
+        console.log(routeArray)
+        setRoute(routeArray)
+    }
 
-  return (
+
+    return (
     <>
         <Header />
         <div className= 'bg-cyan-700 min-h-screen'>
             <H2Element content="Where are you going, mate?"/>
-            <Form />
-            <Results numStops="numStops" line="line"/>
+            <Form handleSubmit={handleSubmit}
+                  selectedOriginStation={selectedOriginStation}
+                  setSelectedOriginStation={setSelectedOriginStation}
+                  selectedDestinationStation={selectedDestinationStation}
+                  setSelectedDestinationStation={setSelectedDestinationStation}/>
+            <Results selectedOriginStation={selectedOriginStation} selectedDestinationStation={selectedDestinationStation} route={route} numStops="numStops" line="line"/>
         </div>
 
     </>

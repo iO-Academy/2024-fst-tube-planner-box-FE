@@ -3,8 +3,6 @@ import {useEffect, useState} from "react";
 
 const StationSelectElement = ({data, name, id, selectedStation, setSelectedStation}) => {
 
-    console.log(data)
-
     return (
         <select
             name={name}
