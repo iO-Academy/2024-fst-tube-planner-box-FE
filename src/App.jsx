@@ -30,7 +30,7 @@ function App() {
     <>
         <Header />
         <div className= 'bg-cyan-700 min-h-screen'>
-            <H2Element content="Where are you going, mate?"/>
+            <H2Element content="Where are you going??"/>
             <Form handleSubmit={handleSubmit}
                   selectedOriginStation={selectedOriginStation}
                   setSelectedOriginStation={setSelectedOriginStation}
