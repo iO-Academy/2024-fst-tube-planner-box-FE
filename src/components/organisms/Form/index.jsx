@@ -21,7 +21,7 @@ const Form = ({handleSubmit, selectedDestinationStation, selectedOriginStation, 
     }, []);
 
     return (
-        <form onSubmit={handleSubmit} className="border-2 border-solid border-black rounded-2xl flex flex-col p-4 bg-white m-4 shadow-2xl">
+        <form onSubmit={handleSubmit} className="border-2 border-solid border-black rounded-2xl flex flex-col p-4 bg-white m-4 shadow-2xl sm:max-w-2xl sm:mx-auto">
             <LabelElement inputName="from" htmlFor="from" />
             <StationSelectElement data={filteredDestinationData} name="from" id="from" selectedStation={selectedDestinationStation}
                                   setSelectedStation={setSelectedDestinationStation}/>
