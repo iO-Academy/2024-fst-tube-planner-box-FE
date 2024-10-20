@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 const Form = ({handleSubmit, selectedDestinationStation, selectedOriginStation, setSelectedDestinationStation, setSelectedOriginStation}) => {
 
     const [data, setData] = useState([])
-    const [query, setQuery] = useState('http://localhost:3000')
+    const [query] = useState('http://localhost:3000')
 
     const filteredDestinationData = data.filter(item => item.name + ' ' + item.code !== selectedOriginStation)
     const filteredOriginData = data.filter(item => item.name + ' ' + item.code !== selectedDestinationStation)
@@ -18,7 +18,7 @@ const Form = ({handleSubmit, selectedDestinationStation, selectedOriginStation, 
             setData(tubes)
         }
         getData()
-    }, []);
+    }, [])
 
     return (
         <form onSubmit={handleSubmit} className="border-2 border-solid border-black rounded-2xl flex flex-col p-4 bg-white m-4 shadow-2xl sm:max-w-2xl sm:mx-auto">

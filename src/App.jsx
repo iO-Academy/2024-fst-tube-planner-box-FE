@@ -1,5 +1,5 @@
 import './App.css'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import Form from "./components/organisms/Form/index.jsx";
 import H2Element from "./components/atoms/H2Element/index.jsx";
 import Header from "./components/molecules/Header/index.jsx";
@@ -20,7 +20,7 @@ function App() {
         const routeArray = await response.json()
         console.log(routeArray)
         setRoute(routeArray)
-        setError('No route available')
+        setError('No route available.')
         setDestinationTitle(selectedDestinationStation)
         setOriginTitle(selectedOriginStation)
     }
@@ -29,17 +29,16 @@ function App() {
     <>
         <Header />
         <div className= 'bg-cyan-700 min-h-screen'>
-            <H2Element content="Where are you going??"/>
+            <H2Element content="Where would you like to go?"/>
             <Form handleSubmit={handleSubmit}
                   selectedOriginStation={selectedOriginStation}
                   setSelectedOriginStation={setSelectedOriginStation}
                   selectedDestinationStation={selectedDestinationStation}
                   setSelectedDestinationStation={setSelectedDestinationStation}/>
-            <Results error={error} selectedOriginStation={selectedOriginStation}
-                     selectedDestinationStation={selectedDestinationStation}
-                     route={route} numStops="numStops" line="line"
-                     destinationTitle={destinationTitle} originTitle={originTitle}
-            />
+            <Results error={error}
+                     route={route}
+                     destinationTitle={destinationTitle}
+                     originTitle={originTitle} />
         </div>
 
     </>
